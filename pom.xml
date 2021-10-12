@@ -124,6 +124,10 @@
 								<xsdOption>
 									<xsd>${basedir}/src/main/resources/ie/CallbackResponse.xsd</xsd>
 								</xsdOption>
+
+								<xsdOption>
+									<xsd>${basedir}/src/main/resources/processingServiceRequest.xsd</xsd>
+								</xsdOption>
 							</xsdOptions>
 						</configuration>
 					</execution>

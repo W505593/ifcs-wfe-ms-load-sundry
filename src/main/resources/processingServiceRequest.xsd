@@ -1,0 +1,31 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.wexinc.com/ifcs"
+           elementFormDefault="qualified"
+           version="1.0">
+
+    <xs:element name="processingServiceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="uniqueIdentifier"/>
+                <xs:element name="target">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="interfaceCatalogId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                            <xs:element name="clientId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!--Optional:-->
+                <xs:element name="inputFiles" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="filename" type="xs:string" minOccurs="0"/>
+                            <xs:element name="filePath" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -43,6 +43,7 @@ public class JavaController {
             if(!resultType.isIsError()){
                 System.out.println(bulkIndicatorRequest.getPayloadDetails().getFileName() + " ");
                 BulkIndicatorResponse bulkIndicatorResponse = sundryService.invokeBatchInterface(bulkIndicatorRequest);
+                logger.info(bulkIndicatorResponse.toString());
             }else{
                 logger.error("An error is in readCsvFile function");
             }
@@ -68,16 +69,15 @@ public class JavaController {
             ieService.successfulCallback(request.getInterfaceID(), request.getCorrelationID());
         }
 
-        BulkIndicatorRequest interfaceRequest = new BulkIndicatorRequest();
+        /*BulkIndicatorRequest interfaceRequest = new BulkIndicatorRequest();
         interfaceRequest.setMetaData(new MetaDataType());
         interfaceRequest.setPayloadDetails(new PayloadDetailsType());
 
         interfaceRequest.getMetaData().setInterfaceId(INTERFACE_ID);
         interfaceRequest.getMetaData().setTargetSystem(request.getClientMid());
 
-        BulkIndicatorResponse interfaceResponse = sundryService.invokeBatchInterface(interfaceRequest);
+        BulkIndicatorResponse interfaceResponse = sundryService.invokeBatchInterface(interfaceRequest);*/
         response.setIsErrorCode(false);
-        response.setMessage(interfaceResponse.getMessageId());
         return response;
     }
 }
