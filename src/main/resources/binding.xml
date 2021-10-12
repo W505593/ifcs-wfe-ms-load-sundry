@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        jaxb:version="2.1">
+    <jaxb:bindings schemaLocation="BulkIndicatorSchema.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.wexinc.bulkindicatorSchema"/>
+        </jaxb:schemaBindings>
+        <jaxb:bindings node="//xs:simpleType[@name='actionType']">
+            <jaxb:bindings node="xs:restriction/xs:enumeration[@value='download']">
+                <jaxb:typesafeEnumMember name="download"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="xs:restriction/xs:enumeration[@value='triggerOnly']">
+                <jaxb:typesafeEnumMember name="triggerOnly"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>

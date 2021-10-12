@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:ifcs="http://www.wexinc.com/ifcs"
+        xmlns:ns1="http://www.wexinc.com/core"
+        targetNamespace="http://www.wexinc.com/ifcs"
+        elementFormDefault="qualified"
+        version="1.0">
+    <xs:import namespace="http://www.wexinc.com/core" schemaLocation="core.xsd"/>
+    
+    <xs:element name="LoadSundryAdjustmentTransactions" type="ifcs:LoadSundryAdjustmentTransactions"/>
+
+    <xs:complexType name="LoadSundryAdjustmentTransactions">
+        <xs:sequence>
+            <xs:element ref="ifcs:Header"/>
+            <xs:element ref="ifcs:LoadSundryAdjustmentTransaction" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Header">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ns1:FileName"/>
+                <xs:element ref="ns1:SequenceNumber"/>
+                <xs:element ref="ns1:RecordCount"/>
+                <xs:element ref="ns1:CountryCode"/>
+                <xs:element ref="ns1:StartDate"/>
+                <xs:element ref="ns1:StartTime"/>
+                <xs:element ref="ns1:ExternalSupplier"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LoadSundryAdjustmentTransaction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ifcs:SundryAdjustment"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SundryAdjustment">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ns1:CustomerAccountNumber"/>
+                <xs:element ref="ns1:AdjustmentTypeCode"/>
+                <xs:element ref="ns1:EffectiveOn"/>
+                <xs:element ref="ns1:SundryTypeCode"/>
+                <xs:element ref="ns1:Amount"/>
+                <xs:element ref="ns1:Reference"/>
+                <xs:element ref="ns1:GLAccountCode"/>
+                <xs:element ref="ns1:GLDescription"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.wexinc.com/core" xmlns:core="http://www.wexinc.com/core" xmlns:ifcs="http://www.wexinc.com/ifcs">
+  <xs:import namespace="http://www.wexinc.com/ifcs" schemaLocation="sundryAdjustmentSchema.xsd"/>
+  <xs:element name="FileName" type="xs:string"/>
+  <xs:element name="SequenceNumber" type="xs:string"/>
+  <xs:element name="RecordCount" type="xs:string"/>
+  <xs:element name="CountryCode" type="xs:string"/>
+  <xs:element name="StartDate" type="xs:string"/>
+  <xs:element name="StartTime" type="xs:string"/>
+  <xs:element name="ExternalSupplier" type="xs:string"/>
+  <xs:element name="SettlementDate" type="xs:string"/>
+  <xs:element name="ExternalFileName" type="xs:string"/>
+  <xs:element name="NonFuelQuantityMultiplier" type="xs:string"/>
+  <xs:element name="CaptureTypeCode" type="xs:string"/>
+  <xs:element name="TransactionCode" type="xs:string"/>
+
+  <xs:element name="CustomerAccountNumber" type="xs:string"/>
+  <xs:element name="AdjustmentTypeCode" type="xs:string"/>
+  <xs:element name="EffectiveOn" type="xs:string"/>
+  <xs:element name="SundryTypeCode" type="xs:string"/>
+  <xs:element name="Amount" type="xs:string"/>
+  <xs:element name="Reference" type="xs:string"/>
+  <xs:element name="GLAccountCode" type="xs:string"/>
+  <xs:element name="GLDescription" type="xs:string"/>
+</xs:schema>

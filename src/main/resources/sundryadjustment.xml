@@ -1,0 +1,47 @@
+<LoadSundryAdjustmentTransactions xmlns:ns2="http://www.wexinc.com/ifcs" xmlns:ns1="http://www.wexinc.com/core">
+    <ns2:Header>
+        <ns1:FileName>{ $outputFileName }</ns1:FileName>
+        <ns1:SequenceNumber>{ $outgoingSeqNum }</ns1:SequenceNumber>
+        <ns1:RecordCount>{data($transactionFile/ns3:header/ns0:recordCount) }</ns1:RecordCount>
+        <ns1:CountryCode>{ data($transactionFile/ns3:header/ns0:countryCode/ns0:code) }</ns1:CountryCode> //filename
+        <ns1:StartDate>{ data($transactionFile/ns3:header/ns0:startDate) }</ns1:StartDate>
+        <ns1:StartTime>{ data($transactionFile/ns3:header/ns0:startTime) }</ns1:StartTime>
+        <ns1:ExternalSupplier>{ data($transactionFile/ns3:header/ns0:externalID) }</ns1:ExternalSupplier>    //table mentioned below
+    </ns2:Header>
+    <ns2:LoadSundryAdjustmentTransaction>
+        <ns2:SundryAdjustment>
+            <ns1:CustomerAccountNumber>{data($sundryTransaction/ns0:accountNo)}</ns1:CustomerAccountNumber>
+            <ns1:AdjustmentTypeCode>{data($sundryTransaction/ns0:adjustmentTypeCode)}</ns1:AdjustmentTypeCode>
+            <ns1:EffectiveOn>{data($sundryTransaction/ns0:postedAt)}</ns1:EffectiveOn>
+            <ns1:SundryTypeCode>{data($sundryTransaction/ns0:sundryTypeCode)}</ns1:SundryTypeCode>
+            <ns1:Amount>{data($sundryTransaction/ns0:customerRebateTotal)}</ns1:Amount>
+            <ns1:Reference>{data($sundryTransaction/ns0:reference)}</ns1:Reference>
+            <ns1:GLAccountCode>{data($sundryTransaction/ns0:glAccountCodes/ns0:accountCode)}</ns1:GLAccountCode>
+            <ns1:GLDescription>{data($sundryTransaction/ns0:glAccountCodes/ns0:description)}</ns1:GLDescription>
+        </ns2:SundryAdjustment>
+    </ns2:LoadSundryAdjustmentTransaction>
+    <ns2:LoadSundryAdjustmentTransaction>
+        <ns2:SundryAdjustment>
+            <ns1:CustomerAccountNumber>{data($sundryTransaction/ns0:accountNo)}</ns1:CustomerAccountNumber>
+            <ns1:AdjustmentTypeCode>{data($sundryTransaction/ns0:adjustmentTypeCode)}</ns1:AdjustmentTypeCode>
+            <ns1:EffectiveOn>{data($sundryTransaction/ns0:postedAt)}</ns1:EffectiveOn>
+            <ns1:SundryTypeCode>{data($sundryTransaction/ns0:sundryTypeCode)}</ns1:SundryTypeCode>
+            <ns1:Amount>{data($sundryTransaction/ns0:customerRebateTotal)}</ns1:Amount>
+            <ns1:Reference>{data($sundryTransaction/ns0:reference)}</ns1:Reference>
+            <ns1:GLAccountCode>{data($sundryTransaction/ns0:glAccountCodes/ns0:accountCode)}</ns1:GLAccountCode>
+            <ns1:GLDescription>{data($sundryTransaction/ns0:glAccountCodes/ns0:description)}</ns1:GLDescription>
+        </ns2:SundryAdjustment>
+    </ns2:LoadSundryAdjustmentTransaction>
+    <ns2:LoadSundryAdjustmentTransaction>
+        <ns2:SundryAdjustment>
+            <ns1:CustomerAccountNumber>{data($sundryTransaction/ns0:accountNo)}</ns1:CustomerAccountNumber>
+            <ns1:AdjustmentTypeCode>{data($sundryTransaction/ns0:adjustmentTypeCode)}</ns1:AdjustmentTypeCode>
+            <ns1:EffectiveOn>{data($sundryTransaction/ns0:postedAt)}</ns1:EffectiveOn>
+            <ns1:SundryTypeCode>{data($sundryTransaction/ns0:sundryTypeCode)}</ns1:SundryTypeCode>
+            <ns1:Amount>{data($sundryTransaction/ns0:customerRebateTotal)}</ns1:Amount>
+            <ns1:Reference>{data($sundryTransaction/ns0:reference)}</ns1:Reference>
+            <ns1:GLAccountCode>{data($sundryTransaction/ns0:glAccountCodes/ns0:accountCode)}</ns1:GLAccountCode>
+            <ns1:GLDescription>{data($sundryTransaction/ns0:glAccountCodes/ns0:description)}</ns1:GLDescription>
+        </ns2:SundryAdjustment>
+    </ns2:LoadSundryAdjustmentTransaction>
+</LoadSundryAdjustmentTransactions>

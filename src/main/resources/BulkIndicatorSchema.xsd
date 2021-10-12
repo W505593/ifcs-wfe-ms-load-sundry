@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.wexinc.com/BulkIndicator_Schema"
+        xmlns:wex="http://www.wexinc.com/BulkIndicator_Schema"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified">
+
+    <xs:element name="bulkIndicatorRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="metaData" type="wex:metaDataType" minOccurs="0"/>
+                <xs:element name="payloadDetails" type="wex:payloadDetailsType" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="bulkIndicatorResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="messageId" type="xs:string" minOccurs="0"/>
+                <xs:element name="senderTimestamp" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="result" type="wex:resultType" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="metaDataType">
+        <xs:sequence>
+            <xs:element name="senderTimestamp" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="messageId" type="xs:string" minOccurs="0"/>
+            <xs:element name="serverId" type="xs:string" minOccurs="0"/>
+            <xs:element name="interfaceId" type="xs:string" minOccurs="0"/>
+            <xs:element name="sourceSystem" type="xs:string" minOccurs="0"/>
+            <xs:element name="targetSystem" type="xs:string" minOccurs="0"/>
+            <xs:element name="clientId" type="xs:string" minOccurs="0"/>
+            <xs:element name="serviceAction" type="wex:actionType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="payloadDetailsType">
+        <xs:complexContent>
+            <xs:extension base="wex:payload">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="payload">
+        <xs:sequence>
+            <xs:element name="externalTransactionId" type="xs:string" minOccurs="0"/>
+            <xs:element name="fileName" type="xs:string" minOccurs="0"/>
+            <xs:element name="directory" type="xs:string" minOccurs="0"/>
+
+            <xs:element name="attributes" type="wex:attributesType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="attributesType">
+        <xs:sequence>
+            <xs:element name="attribute" type="wex:attributeType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="attributeType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resultType">
+        <xs:sequence>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+            <xs:element name="isError" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="errorList" type="wex:errorsType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="errorsType">
+        <xs:sequence>
+            <xs:element name="error" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="actionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="download"/>
+            <xs:enumeration value="triggerOnly"/>
+        </xs:restriction>
+    </xs:simpleType>
+</schema>
