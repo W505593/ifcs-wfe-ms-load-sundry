@@ -6,7 +6,7 @@
     <xs:element name="processingServiceRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="uniqueIdentifier"/>
+                <xs:element name="uniqueIdentifier" type="xs:string"/>
                 <xs:element name="target">
                     <xs:complexType>
                         <xs:sequence>
